@@ -6,4 +6,5 @@
     *   --transpile-only => Não vai dar erro no momento do desenvolvimento, sintaxe e entre outros;
     * --ignore-watch node_modules => Não vai monitorar mudanças na node-modules;
     * --respawn => Aplicação sempre dará reload quanto tiver alteração no código
+    * --inspect => Faz com que o debug do editor se conect com a aplicação
         
