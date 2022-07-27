@@ -11,11 +11,11 @@
 
 ### Docker
 1- Criar Arquivo Dockerfile na raíz do projeto
-2- ao terminar, executar o comando docker build -t rentx .
+2- ao terminar, executar o comando docker build -t <nome_da_aplicacao> .
     docker build -t => efetua o build do projeto (Cria a imagem), o "." no final, é o path do arquivo DOCKER FILE, 
     se executar o comando no caminho onde o Docker file se encontra, basta passar o "."
 3- para rodar o container, rodar o seguinte comando:
-    * docker run -p 3333:3333 rentx
+    * docker run -p 3333:3333 <nome_da_sua_aplicacao>
         * -p <porta> <nomeImagem>, mapeia a porta que será executada a aplicação 
 
 #### Comandos úteis no docker
