@@ -4,6 +4,7 @@ services:
    app:
      build:  .
      container_name: rentx
+    #  restart: always //Tag para reiniciar o serviço sempre que o docker iniciar, exemplo, ao reiniciar o windows, o container irá subir automaticamente.
      ports:
        - 3333:3333
      volumes:
