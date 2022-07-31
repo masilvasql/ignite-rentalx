@@ -35,3 +35,12 @@
     * docker-compose stop
     * docker-compose down <remove tudo que estiver cirado dentro do docker-compose.yml>
     * docker-compose up --force-recreate => Recria a imagem do zero
+
+### TYPEORM
+
+#### Comandos úteis TYPEORM
+    * npx typeorm migration:create  ./src/database/migrations/createCategories
+        * caminho desestruturado seria ./src/database => caminho relativo
+        * migrations => nome da pasta onde as migrations irão ficar
+        * createCategories => nome desejado a dar à migration que irá gerar o arquivo
+    * npx typeorm migration:run
