@@ -7,7 +7,6 @@ services:
     restart: always
     ports: 
       - 5432:5432
-      - 6543:5432
     environment:
       - POSTGRES_DB=rentx
       - POSTGRES_USER=docker
