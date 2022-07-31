@@ -27,9 +27,11 @@
     * docker rm <container_id>
     * docker logs <nome_da_aplicacao> -f => monitora em tempo real
     * docker logs <nome_da_aplicacao> => mostra os últimos logs até o comando
+    * docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <id da instancia>
 
 #### Comandos úteis no docker-compose
     * docker-compose up => Executa em real time, se sair do terminal, ele para a aplicação
     * docker-compose up -d => irá rodar em background
     * docker-compose stop
     * docker-compose down <remove tudo que estiver cirado dentro do docker-compose.yml>
+    * docker-compose up --force-recreate => Recria a imagem do zero
