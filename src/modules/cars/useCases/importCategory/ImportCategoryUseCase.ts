@@ -1,6 +1,9 @@
 import { parse as csvParse } from "csv-parse";
 import fs from "fs";
+import { Repository } from "typeorm";
 
+import AppDataSource from "../../../../database/data-source";
+import { Category } from "../../entities/Category";
 import { ICategoriesRepository } from "../../repositories/ICategoriesRepository";
 
 interface IImportCategory {
@@ -9,7 +12,11 @@ interface IImportCategory {
 }
 
 class ImportCategoryUseCase {
-    constructor(private categoriesRepository: ICategoriesRepository) {}
+    private repository: Repository<Category>;
+
+    constructor(private categoriesRepository: ICategoriesRepository) {
+        this.repository = AppDataSource.getRepository(Category);
+    }
 
     loadCategories(file: Express.Multer.File): Promise<IImportCategory[]> {
         return new Promise((resolve, reject) => {
@@ -42,12 +49,14 @@ class ImportCategoryUseCase {
         const categories = await this.loadCategories(file);
         categories.map(async (category) => {
             const { name, description } = category;
-            const existCategory = this.categoriesRepository.findByName(name);
+            const existCategory = await this.repository.findOneBy({ name });
             if (!existCategory) {
-                this.categoriesRepository.create({
+                const repository = this.repository.create({
                     name,
                     description,
                 });
+
+                await this.repository.save(repository);
             }
         });
     }
