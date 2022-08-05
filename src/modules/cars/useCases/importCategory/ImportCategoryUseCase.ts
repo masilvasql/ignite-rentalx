@@ -1,5 +1,6 @@
 import { parse as csvParse } from "csv-parse";
 import fs from "fs";
+import { inject, injectable } from "tsyringe";
 import { Repository } from "typeorm";
 
 import AppDataSource from "../../../../database/data-source";
@@ -11,10 +12,14 @@ interface IImportCategory {
     description: string;
 }
 
+@injectable()
 class ImportCategoryUseCase {
     private repository: Repository<Category>;
 
-    constructor(private categoriesRepository: ICategoriesRepository) {
+    constructor(
+        @inject("CategoriesRepository")
+        private categoriesRepository: ICategoriesRepository
+    ) {
         this.repository = AppDataSource.getRepository(Category);
     }
 
