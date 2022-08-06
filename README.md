@@ -43,4 +43,4 @@
         * caminho desestruturado seria ./src/database => caminho relativo
         * migrations => nome da pasta onde as migrations irão ficar
         * createCategories => nome desejado a dar à migration que irá gerar o arquivo
-    * npx typeorm migration:run
+    * yarn migration:run (irá rodar o comando que está no package.json)

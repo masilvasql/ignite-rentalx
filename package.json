@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node-dev --inspect --transpile-only --poll --ignore-watch node_modules --respawn src/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js  -- -d ./src/database/data-source.ts",
-    "migration:run": "ts-node-dev ./node_modules/typeorm/cli migration:run -d  ./src/database/data-source.ts",
+    "migration:run": "ts-node-dev ./node_modules/typeorm/cli.js migration:run -d  ./src/database/data-source.ts",
     "migration:revert": "ts-node-dev ./node_modules/typeorm/cli migration:revert -d  ./src/database/data-source.ts"
   },
   "dependencies": {
