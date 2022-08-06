@@ -33,7 +33,7 @@
     * docker-compose up => Executa em real time, se sair do terminal, ele para a aplicação
     * docker-compose up -d => irá rodar em background
     * docker-compose stop
-    * docker-compose down <remove tudo que estiver cirado dentro do docker-compose.yml>
+    * docker-compose down <remove tudo que estiver criado dentro do docker-compose.yml>
     * docker-compose up --force-recreate => Recria a imagem do zero
 
 ### TYPEORM
