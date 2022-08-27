@@ -40,7 +40,20 @@
 
 #### Comandos úteis TYPEORM
     * npx typeorm migration:create  ./src/database/migrations/createCategories
-        * caminho desestruturado seria ./src/database => caminho relativo
-        * migrations => nome da pasta onde as migrations irão ficar
-        * createCategories => nome desejado a dar à migration que irá gerar o arquivo
+        > caminho desestruturado seria ./src/database => caminho relativo
+        > migrations => nome da pasta onde as migrations irão ficar
+        > createCategories => nome desejado a dar à migration que irá gerar o arquivo
     * yarn migration:run (irá rodar o comando que está no package.json)
+
+### TESTES (JEST)
+
+#### Comandos úteis JEST
+    * yarn jest --init (Inicializa a configuração do JEST)
+    
+#### Adicionais úteis JEST
+    * Instalar a dependência ts-jest, necessária para utilizar com o TYPE SCRIPT
+    * Dentro do arquivo jest.config.ts: 
+        > procurar por preset e modificar o valor para preset: "ts-jest"
+        > procurar por testMatch e apontar onde estarão os arquivos de teste   
+        > procurar por bail, vai estar inicializado com o valor "0", esta propriedade indica 
+          se é para o jest parar os teses após o 1º erro, alterar para true
